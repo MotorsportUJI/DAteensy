@@ -108,6 +108,10 @@ namespace DISPLAYY {
             ser->printf("gear.txt=\"E\"");
             endMessage();
             return;
+        } else if (str == 0){
+            ser -> printf("gear.txt=\"N\"");
+            endMessage();
+            return;
         }
         
         ser->printf("gear.txt=\"%d\"",str);
@@ -267,8 +271,8 @@ namespace DISPLAYY {
 
 
     void setMainScreen(){
-        //ser->printf("page 1"); // page 1 is yet to be populated
-        ser->printf("page 2");
+        ser->printf("page 1"); // page 1 is yet to be populated
+        //ser->printf("page 2");
         endMessage();
     }
 

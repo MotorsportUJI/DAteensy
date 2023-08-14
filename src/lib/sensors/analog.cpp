@@ -9,7 +9,7 @@ namespace ANALOG {
         const float minVoltage = 0.5;
         const float maxVoltage = 4.5;
         const float minPressure = 0.0;
-        const float maxPressure = 10.0;
+        const float maxPressure = 13.78;
 
         Serial.println(int(maxVoltage*100));
 

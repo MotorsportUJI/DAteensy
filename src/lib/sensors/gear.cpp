@@ -2,7 +2,7 @@
 namespace GEAR {
   void initGear(){
       for(int i=0; i<7; i++){
-        pinMode(i, INPUT);
+        pinMode(i, INPUT_PULLUP);
       }
   }
 
@@ -13,8 +13,8 @@ namespace GEAR {
       return 1;
     } else if (!digitalRead(2)){
       return 2;
-    } else if (!digitalRead(3)){
-      return 3;
+    //} else if (!digitalRead(3)){
+      //return 3;
     } else if (!digitalRead(4)){
       return 4;
     } else if (!digitalRead(5)){
@@ -25,11 +25,11 @@ namespace GEAR {
 
 
 
-    for(int i=0; i<7; i++){
+    /*for(int i=0; i<7; i++){
       if (!digitalRead(i)){
         return 6-i;
       }
-    }
+    }*/
     return 255;
   }
 

@@ -13,5 +13,6 @@ namespace RADIO {
 
     void initRadio(HardwareSerial &_serial);
     void sendPacket(Packet packet);
+    void sendData(String data);
 
 }

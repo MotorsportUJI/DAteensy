@@ -34,6 +34,7 @@ void setup() {
    // EmulateDashTimer.begin(emulateDash, 100000);
 
     DISPLAYY::initScreen(ScreenUART);
+    SerialUSB.begin(115200);
     RADIO::initRadio(RadioUART);
 
     initOBD2(OBD2db);
@@ -143,7 +144,11 @@ void loop() {
         // add fuel pressure
         to_save += ",";
         to_save += String(analogRead(15));
+        RADIO::sendData(to_save);
+        
         SDSTORE::saveLine(to_save);
+        SerialUSB.println(to_save);
+        
         elapsed_100ms = millis();
 
     }
@@ -160,6 +165,7 @@ void loop() {
 
         // send data over radio
         //sendPacket(RadioPacket);
+        
 
         //printOBD2ALL(OBD2db);
         if (OBD2db.fuel_system_status != 0){

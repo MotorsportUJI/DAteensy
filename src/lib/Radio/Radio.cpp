@@ -16,5 +16,9 @@ namespace RADIO {
 
     }
 
+    void sendData(String data) {
+        ser1->println(data);
+    }
+
 }
 

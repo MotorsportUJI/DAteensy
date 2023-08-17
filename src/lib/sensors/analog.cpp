@@ -11,7 +11,7 @@ namespace ANALOG {
         const float minPressure = 0.0;
         const float maxPressure = 13.78;
 
-        Serial.println(int(maxVoltage*100));
+        // Serial.println(int(maxVoltage*100));
 
         // Map the voltage to the pressure range using the map() function
         float pressure = map(int(voltage * 100), minVoltage * 100, maxVoltage * 100, minPressure * 100, maxPressure * 100) / 100.0;
